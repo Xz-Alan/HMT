@@ -1,0 +1,4 @@
+matplotlib
+einops
+opencv-python
+tifffile
