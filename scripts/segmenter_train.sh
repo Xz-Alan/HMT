@@ -1,19 +1,19 @@
 #!/usr/bin/env bash
 
-gpus=4,5,6,7
+gpus=5,6
 checkpoint_root=checkpoints
 data_name=Vaihingen       # Potsdam | Vaihingen | GID
 
-num_workers=4
+num_workers=2
 img_size=256
-batch_size=8
+batch_size=4
 lr=0.005
 max_epochs=500
 net_G=segmenter
 #base_resnet18
 #base_transformer_pos_s4_dd8
 #base_transformer_pos_s4_dd8_dedim8
-lr_policy=step    # step | linear
+lr_policy=poly    # step | linear
 
 project_name=MFT_${net_G}_${data_name}_w${num_workers}_lr${lr}_${max_epochs}_${lr_policy}
 

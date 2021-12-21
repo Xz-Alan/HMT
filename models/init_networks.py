@@ -24,7 +24,7 @@ def define_G(args, init_type='normal', init_gain=0.02, gpu_ids=[]):
         net = models.BASE_Transformer(input_nc=3, output_nc=args.n_class, token_len=4, resnet_stages_num=4, with_pos='learned', enc_depth=1, dec_depth=8, decoder_dim_head=8)
     elif args.net_G == 'pspnet':
         net = models.PSPNet(n_classes=args.n_class, backend='resnet101')
-    elif args.net_G == 'segformer': #TODO: output_size: H/4, W/4
+    elif args.net_G == 'segformer':
         net = models.Segformer(num_classes=args.n_class)
     elif args.net_G == 'segmenter':
         net = models.create_segmenter(args.n_class, patch_size=8, decoder_name='mask')
