@@ -5,7 +5,6 @@ from models.trainer import *
 from data_config import DataConfig
 # warnings.filterwarnings("ignore")
 
-os.environ['CUDA_VISIBLE_DEVICES']='4, 5'
 print(torch.cuda.is_available())
 
 def train(args):

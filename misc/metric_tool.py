@@ -189,7 +189,7 @@ class MetricScore(object):
             - fwavacc
             - precision + recall --> F1 score
         """
-        hist = self.confusion_matrix[1:,1:]     # 不计算black
+        hist = self.confusion_matrix[1:-1,1:-1]     # 不计算black & background
         n_class = hist.shape[0]
         tp = np.diag(hist)
         sum_a1 = hist.sum(axis=1)

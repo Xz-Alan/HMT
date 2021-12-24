@@ -16,7 +16,7 @@ from datasets.Seg_dataset import SegDataset
 def get_loader(root_dir, data_str, img_size=256, batch_size=8, split='test',
                is_train=False, dataset='SegDataset'):
     if not osp.isdir(osp.join(root_dir, 'list')):
-        input("no list")
+        input("no list, continue or not?")
         generate_list(root_dir)
     mean = (0.485, 0.456, 0.406)
     std = (0.229, 0.224, 0.225)

@@ -29,7 +29,7 @@ def define_G(args, init_type='normal', init_gain=0.02, gpu_ids=[]):
     elif args.net_G == 'segmenter':
         net = models.create_segmenter(args.n_class, patch_size=8, decoder_name='mask')
     elif args.net_G == 'wetr':
-        net = models.WeTr(backbone='mit_b5', num_classes=args.n_class, embedding_dim=256, pretrained=False)  # mit_b0--b5
+        net = models.WeTr(backbone='mit_b5', num_classes=args.n_class, embedding_dim=args.img_size, pretrained=False)  # mit_b0--b5
     else:
         raise NotImplementedError('Generator model name [%s] is not recognized' % args.net_G)
 
